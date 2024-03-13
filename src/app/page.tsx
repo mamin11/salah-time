@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function PrayerTile() {
   return (
-    <div className="h-24 px-8 flex gap-2 justify-between items-center rounded-2xl w-full bg-white border border-solid border-gray-300">
+    <div className="h-24 pl-4 pr-8 flex gap-2 justify-between items-center rounded-2xl w-full bg-white border border-solid border-gray-300">
     <div className="flex gap-6 items-center ">
     <div className="flex items-center">
       <Image
