@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "salah time",
-    "short_name": "ST",
-    "description": "Prayer times app",
+    "name": "Assunah Mosque",
+    "short_name": "ASM",
+    "description": "Assunah Islamic Center",
     "icons": [
         {
             "src": "/icon-192x192.png",
