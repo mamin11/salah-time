@@ -27,10 +27,10 @@ function PrayerTile() {
 export default function Home() {
   return (
     <main className="flex flex-col h-screen items-start bg-gray-200">
-      <div className="h-2/5 bg-gradient-to-b from-blue-500 to-blue-700 w-full rounded-b-3xl flex justify-center items-center">
+      <div className="h-2/6 bg-gradient-to-b from-blue-500 to-blue-700 w-full rounded-b-3xl flex justify-center items-center">
         <p className="text-white text-3xl">Welcome</p>
       </div>
-      <div className="h-3/5 p-6 w-full rounded-b-3xl flex flex-col gap-4">
+      <div className="h-4/6 p-6 w-full rounded-b-3xl flex flex-col gap-4">
         
         <PrayerTile />
         <PrayerTile />
