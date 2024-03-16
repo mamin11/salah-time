@@ -1,6 +1,6 @@
 import Image from "next/image";
-
-interface Prayer {name: string, adhan: string, iqama: string, icon: string}
+import TimeDown from "./timedown";
+import {Prayer} from "./interfaces";
 
 function PrayerTile({prayer} :{prayer: Prayer}) {
   return (
@@ -27,21 +27,23 @@ function PrayerTile({prayer} :{prayer: Prayer}) {
 }
 
 const prayers :Prayer[] = [
-  {name: "Fajr", adhan: "04:34", iqama: "04:54", icon: "/sunrise.svg"},
+  {name: "Fajr", adhan: "04:32", iqama: "04:52", icon: "/sunrise.svg"},
   {name: "Dhuhr", adhan: "12:30", iqama: "12:45", icon: "/dhuhr.svg"},
-  {name: "Asr", adhan: "15:30", iqama: "15:45", icon: "/dhuhr.svg"},
-  {name: "Maghrib", adhan: "18:04", iqama: "18:02", icon: "/maghrib.svg"},
+  {name: "Asr", adhan: "15:22", iqama: "15:45", icon: "/dhuhr.svg"},
+  {name: "Maghrib", adhan: "18:09", iqama: "18:09", icon: "/maghrib.svg"},
   {name: "Isha", adhan: "19:30", iqama: "19:45", icon: "/isha.svg"}
 ];
 
 export default function Home() {
+
   return (
     <main className="flex flex-col h-screen items-start bg-gray-200">
       <div className="h-1/4 bg-gradient-to-b from-blue-500 to-blue-700 w-full rounded-b-3xl flex flex-col justify-center items-center">
-        <p className="text-white text-4xl">00:34:23</p>
+        <TimeDown prayers={prayers} />
         <p className="text-white text-sm p-2">time to next prayer</p>
       </div>
       <div className="h-3/4 p-6 w-full rounded-b-3xl flex flex-col gap-4">
+        <p className="text-gray-600 text-center text-md font-semibold p-2">{new Date().toDateString()}</p>
         
         {prayers.map((prayer) => (
           <PrayerTile prayer={prayer} />
