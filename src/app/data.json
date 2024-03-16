@@ -1,0 +1,184 @@
+{
+    "2024-03-16": [
+        {"name": "Fajr", "adhan": "04:32", "iqama": "04:52", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:14", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:22", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:09", "iqama": "18:09", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:30", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-17": [
+        {"name": "Fajr", "adhan": "04:29", "iqama": "04:49", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:14", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:24", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:12", "iqama": "18:12", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:32", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-18": [
+        {"name": "Fajr", "adhan": "04:27", "iqama": "04:47", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:14", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:25", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:14", "iqama": "18:14", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:34", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-19": [
+        {"name": "Fajr", "adhan": "04:25", "iqama": "04:45", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:13", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:26", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:16", "iqama": "18:16", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:36", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-20": [
+        {"name": "Fajr", "adhan": "04:23", "iqama": "04:43", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:13", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:27", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:18", "iqama": "18:18", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:38", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-21": [
+        {"name": "Fajr", "adhan": "04:21", "iqama": "04:41", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:13", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:28", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:19", "iqama": "18:19", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:38", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-22": [
+        {"name": "Fajr", "adhan": "04:20", "iqama": "04:40", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:12", "iqama": "12:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:29", "iqama": "15:45", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:21", "iqama": "18:21", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:40", "iqama": "19:45", "icon": "/isha.svg"}
+    ],
+    "2024-03-23": [
+        {"name": "Fajr", "adhan": "04:18", "iqama": "04:38", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:12", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:31", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:23", "iqama": "18:23", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:42", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-24": [
+        {"name": "Fajr", "adhan": "04:15", "iqama": "04:35", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:12", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:31", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:24", "iqama": "18:24", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:43", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-25": [
+        {"name": "Fajr", "adhan": "04:13", "iqama": "04:33", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:11", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:32", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:26", "iqama": "18:26", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:44", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-26": [
+        {"name": "Fajr", "adhan": "04:12", "iqama": "04:32", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:11", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:33", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:28", "iqama": "18:28", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:46", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-27": [
+        {"name": "Fajr", "adhan": "04:09", "iqama": "04:29", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:11", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:33", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:29", "iqama": "18:29", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:47", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-28": [
+        {"name": "Fajr", "adhan": "04:08", "iqama": "04:28", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:11", "iqama": "12:45", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:34", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:31", "iqama": "18:31", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:49", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-29": [
+        {"name": "Fajr", "adhan": "04:06", "iqama": "04:26", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:10", "iqama": "12:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:35", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:33", "iqama": "18:33", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:50", "iqama": "20:00", "icon": "/isha.svg"}
+    ],
+    "2024-03-30": [
+        {"name": "Fajr", "adhan": "04:04", "iqama": "04:24", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "12:10", "iqama": "12:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "15:36", "iqama": "16:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "18:34", "iqama": "18:34", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "19:51", "iqama": "20:10", "icon": "/isha.svg"}
+    ],
+    "2024-03-31": [
+        {"name": "Fajr", "adhan": "05:02", "iqama": "05:22", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:10", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:37", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:36", "iqama": "19:36", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "20:53", "iqama": "21:10", "icon": "/isha.svg"}
+    ],
+    "2024-04-01": [
+        {"name": "Fajr", "adhan": "05:00", "iqama": "05:20", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:09", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:38", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:38", "iqama": "19:38", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "20:55", "iqama": "21:10", "icon": "/isha.svg"}
+    ],
+    "2024-04-02": [
+        {"name": "Fajr", "adhan": "04:58", "iqama": "05:18", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:09", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:39", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:39", "iqama": "19:39", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "20:56", "iqama": "21:10", "icon": "/isha.svg"}
+    ],
+    "2024-04-03": [
+        {"name": "Fajr", "adhan": "04:56", "iqama": "05:16", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:09", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:40", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:41", "iqama": "19:41", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "20:57", "iqama": "21:10", "icon": "/isha.svg"}
+    ],
+    "2024-04-04": [
+        {"name": "Fajr", "adhan": "04:53", "iqama": "05:13", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:08", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:41", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:43", "iqama": "19:43", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "20:59", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-05": [
+        {"name": "Fajr", "adhan": "04:51", "iqama": "05:11", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:08", "iqama": "13:15", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:42", "iqama": "17:00", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:44", "iqama": "19:44", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:00", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-06": [
+        {"name": "Fajr", "adhan": "04:49", "iqama": "05:09", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:08", "iqama": "13:15", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:42", "iqama": "17:15", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:46", "iqama": "19:46", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:02", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-07": [
+        {"name": "Fajr", "adhan": "04:47", "iqama": "05:07", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:08", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:43", "iqama": "17:15", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:48", "iqama": "19:48", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:04", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-08": [
+        {"name": "Fajr", "adhan": "04:44", "iqama": "05:04", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:07", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:44", "iqama": "17:15", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:49", "iqama": "19:49", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:05", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-09": [
+        {"name": "Fajr", "adhan": "04:42", "iqama": "05:02", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:07", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:45", "iqama": "17:15", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:51", "iqama": "19:51", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:06", "iqama": "21:20", "icon": "/isha.svg"}
+    ],
+    "2024-04-10": [
+        {"name": "Fajr", "adhan": "04:40", "iqama": "05:00", "icon": "/sunrise.svg"},
+        {"name": "Dhuhr", "adhan": "13:07", "iqama": "13:30", "icon": "/dhuhr.svg"},
+        {"name": "Asr", "adhan": "16:46", "iqama": "17:15", "icon": "/dhuhr.svg"},
+        {"name": "Maghrib", "adhan": "19:53", "iqama": "19:53", "icon": "/maghrib.svg"},
+        {"name": "Isha", "adhan": "21:08", "iqama": "21:20", "icon": "/isha.svg"}
+    ]
+}
