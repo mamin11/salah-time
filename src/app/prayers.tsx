@@ -1,6 +1,7 @@
 'use client';
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import {Prayer, PrayerList} from "./interfaces";
+import {Prayer} from "./interfaces";
 
 function PrayerTile({prayer} :{prayer: Prayer}) {
     return (
@@ -26,15 +27,27 @@ function PrayerTile({prayer} :{prayer: Prayer}) {
     );
 }
 
-export default function Prayers({prayers} :PrayerList) {
+export default function Prayers() {
     const today = new Date();
+    const [prayers, setPrayers] = useState([]);
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('/api?day='+today.toISOString().substr(0, 10));   
+            const jsonData = await response.json();
+            
+            setPrayers(jsonData.data)
+        };
+
+        fetchData();
+    }, []);
     
     return (
         <div className="h-3/4 p-6 w-full rounded-b-3xl flex flex-col gap-4 items-center">
             <p className="text-gray-600 text-center text-md font-semibold p-2">{today.toDateString()}</p>
             
-            {prayers.map((prayer) => (
-            <PrayerTile prayer={prayer} />
+            {(prayers).map((prayer, index) => (
+            <PrayerTile key={index} prayer={prayer} />
             ))}
 
             {prayers.length <= 0 ? <span className="my-auto items-center justify-center">Sorry no data</span> : <span></span>}
