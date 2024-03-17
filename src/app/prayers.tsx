@@ -26,7 +26,7 @@ function PrayerTile({prayer} :{prayer: Prayer}) {
     );
 }
 
-export default function Prayer({prayers} :PrayerList) {
+export default function Prayers({prayers} :PrayerList) {
     const today = new Date();
     
     return (
