@@ -26,7 +26,6 @@ function getNextPrayer(prayers: Prayer[], todayString: string, today: Date) {
 export default function TimeDown() {
     const today = new Date();
     const todayString = today.toISOString().substr(0, 10);
-    // const [prayers, setPrayers] = useState<Prayer[]>([]);
     const [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
     
     useEffect(() => {
@@ -43,8 +42,6 @@ export default function TimeDown() {
                 jsonData = await newResponse.json();
             }
 
-            // setPrayers(jsonData.data);
-
             // set next prayer time
             const nextPr = getNextPrayer(jsonData.data, todayString, today);
             setNextPrayerTime(nextPr);
@@ -53,29 +50,6 @@ export default function TimeDown() {
         fetchData();
     }, []);
 
-    // const sortedPrayers = prayers.slice().sort((a, b) => {
-    //     const timeA = new Date(`${todayString}T${a.iqama}`);
-    //     const timeB = new Date(`${todayString}T${b.iqama}`);
-    //     return timeA.getTime() - timeB.getTime();
-    // });
-
-    // // Find the next prayer
-    // let nextPrayer = null;
-    // for (const prayer of sortedPrayers) {
-    //     let adhanTime = new Date(`${todayString}T${prayer.iqama}`);
-    //     if (adhanTime.valueOf() > today.valueOf()) {
-    //         nextPrayer = prayer.iqama;
-    //         break;
-    //     }
-    // }
-
-    // let ishaIqama = new Date(`${todayString}T${sortedPrayers[sortedPrayers.length - 1].iqama}`);
-    // if( ishaIqama.valueOf() < today.valueOf()) {
-    //     // callback to next day
-    // }
-
-    // const nextPrayerTime = new Date(`${todayString}T${nextPrayer}`);
-    // const nextPrayerTime = getNextPrayer(prayers, todayString, today);
     const { hours, minutes, seconds } = useTimer(nextPrayerTime);
 
     return <span className="text-white text-4xl">{`${hours}`+':'+`${minutes}`+':'+`${seconds}`}</span>;
