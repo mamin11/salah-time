@@ -28,7 +28,7 @@ function PrayerTile({ prayer }: { prayer: Prayer }) {
 }
 
 export default function Prayers() {
-    const today = new Date();
+    const [today, setToday] = useState<Date>(new Date());
     const [prayers, setPrayers] = useState([]);
 
     useEffect(() => {
@@ -40,14 +40,19 @@ export default function Prayers() {
         };
 
         fetchData();
-    }, []);
+    }, [today]);
 
     const loadNextDay = () => {
-        alert('load next day');
+        const newDate = new Date(today);
+        newDate.setDate(newDate.getDate() + 1);
+        setToday(newDate);
     }
 
     const loadPrevDay = () => {
-        alert('load prev day');
+        const newDate = new Date(today);
+        newDate.setDate(newDate.getDate() - 1);
+        setToday(newDate);
+
     }
 
     return (
@@ -68,11 +73,14 @@ export default function Prayers() {
                 </button>
             </div>
 
-            {(prayers).map((prayer, index) => (
-                <PrayerTile key={index} prayer={prayer} />
-            ))}
+            {prayers?.length > 0 ? (
+                prayers.map((prayer, index) => (
+                    <PrayerTile key={index} prayer={prayer} />
+                ))
+            ) : (
+                <p>No data available</p>
+            )}
 
-            {prayers.length <= 0 ? <span className="my-auto items-center justify-center">Sorry no data</span> : <span></span>}
         </div>
     );
 }
