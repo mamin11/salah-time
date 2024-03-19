@@ -24,9 +24,14 @@ function getNextPrayer(prayers: Prayer[], todayString: string, today: Date) {
 }
 
 export default function TimeDown() {
-    const today = new Date();
-    const todayString = today.toISOString().substr(0, 10);
-    const [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
+    let today = new Date();
+    let todayString = today.toISOString().substr(0, 10);
+    let nextDay = new Date();
+    nextDay.setDate(new Date().getDate() + 1);
+    let nextDayStr = nextDay.toISOString().substr(0,10);
+    let [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
+    let timerPeriod = {hours: 0, minutes: 0, seconds: 0};
+    let todayPrayersOver = false;
     
     useEffect(() => {
         const fetchData = async () => {
@@ -37,20 +42,30 @@ export default function TimeDown() {
             // if isha has passed current time, request next days data
             const isha = jsonData.data?.find((p: Prayer) => p.name === 'Isha');
             if(isha && (new Date(`${todayString}T${isha.iqama}`).valueOf() < today.valueOf())) {
-                today.setDate(today.getDate() + 1); // add one day 
-                const newResponse = await fetch('/api?day='+today.toISOString().substr(0, 10));
+                todayPrayersOver = true;
+                const newResponse = await fetch('/api?day='+nextDay.toISOString().substr(0, 10));
                 jsonData = await newResponse.json();
             }
-
-            // set next prayer time
-            const nextPr = getNextPrayer(jsonData.data, todayString, today);
-            setNextPrayerTime(nextPr);
+            
+            if(todayPrayersOver) {
+                const nextPr = getNextPrayer(jsonData.data, nextDayStr, today);
+                setNextPrayerTime(nextPr);
+            } else {
+                const nextPr = getNextPrayer(jsonData.data, todayString, today);
+                setNextPrayerTime(nextPr);
+            }
         };
 
         fetchData();
     }, []);
 
-    const { hours, minutes, seconds } = useTimer(nextPrayerTime);
+    // const { hours, minutes, seconds } = useTimer(nextPrayerTime);
+    timerPeriod = useTimer(nextPrayerTime);
 
-    return <span className="text-white text-4xl">{`${hours}`+':'+`${minutes}`+':'+`${seconds}`}</span>;
+    return <>
+    {timerPeriod.hours != 0 && timerPeriod.minutes != 0 && timerPeriod.seconds != 0 ? 
+    <span className="text-white text-4xl">{`${timerPeriod.hours}`+':'+`${timerPeriod.minutes}`+':'+`${timerPeriod.seconds}`}</span>
+    : 
+    <span className="text-white text-4xl">...</span>}
+    </>
 }
