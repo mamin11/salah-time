@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { Prayer } from "./interfaces";
 import Timer from "./timer";
 
@@ -24,46 +24,50 @@ function getNextPrayer(prayers: Prayer[], todayString: string, today: Date) {
 }
 
 export default function TimeDown() {
-    let [today, setToday] = useState<Date>(new Date());
-    let [todayString, setTodayString] = useState<string>(today.toISOString().substr(0, 10));
-    let [nextDay, setNextDay] = useState<Date>(new Date());
-    let [nextDayStr, setNextDayStr] = useState<string>(nextDay.toISOString().substr(0, 10));
-    let [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
-    let [todayPrayersOver, setTodayPrayersOver] = useState(false);
-    
-    useEffect(() => {
-        const fetchData = async () => {
-            // get prayers
-            const response = await fetch('/api?day='+today.toISOString().substr(0, 10));   
-            let jsonData = await response.json();
+    const [today, setToday] = useState<Date>(new Date());
+    const todayString = useMemo(() => today.toISOString().substr(0, 10), [today]);
+    const [nextDay, setNextDay] = useState<Date>(new Date());
+    const nextDayStr = useMemo(() => nextDay.toISOString().substr(0, 10), [nextDay]);
+    const [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
+    const [todayPrayersOver, setTodayPrayersOver] = useState(false);
+    const [prayers, setPrayers] = useState<Prayer[]>([]);
 
-            // if isha has passed current time, request next days data
-            const isha = jsonData.data?.find((p: Prayer) => p.name === 'Isha');
-            if(isha && (new Date(`${todayString}T${isha.iqama}`).valueOf() < today.valueOf())) {
-                // todayPrayersOver = true;
+    const fetchPrayers = useCallback(async (todayString:string) => {
+        try {
+            const response = await fetch('/api?day=' + todayString);
+            const jsonData = await response.json();
+            setPrayers(jsonData.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
+
+    useEffect(() => {
+        fetchPrayers(todayString);
+        const timer = setInterval(() => {
+            fetchPrayers(todayString);
+        }, 24 * 60 * 60 * 1000); // Fetch prayers every 24 hours
+    
+        return () => clearInterval(timer); // Clean up on component unmount
+    }, [fetchPrayers]);
+
+    useEffect(() => {
+        if (prayers.length > 0) {
+            const isha = prayers.find((p: Prayer) => p.name === 'Isha');
+            if (isha && (new Date(`${todayString}T${isha.iqama}`).valueOf() < Date.now())) {
                 setTodayPrayersOver(true);
-                const newResponse = await fetch('/api?day='+nextDay.toISOString().substr(0, 10));
-                jsonData = await newResponse.json();
+                fetchPrayers(nextDayStr);
             }
-            
-            if(todayPrayersOver) {
-                const nextPr = getNextPrayer(jsonData.data, nextDayStr, today);
+    
+            if (todayPrayersOver) {
+                const nextPr = getNextPrayer(prayers, nextDayStr, today);
                 setNextPrayerTime(nextPr);
             } else {
-                const nextPr = getNextPrayer(jsonData.data, todayString, today);
+                const nextPr = getNextPrayer(prayers, todayString, today);
                 setNextPrayerTime(nextPr);
             }
-        };
-
-        setToday(new Date());
-        setTodayString(today.toISOString().substr(0, 10));
-        // set next day to nextDay + 1
-        nextDay.setDate(new Date().getDate() + 1);
-        setNextDay(nextDay);
-        setNextDayStr(nextDay.toISOString().substr(0, 10));
-
-        fetchData();
-    }, []);
+        }
+    }, [prayers, today, todayString, nextDay, nextDayStr, todayPrayersOver, fetchPrayers]);
 
     return <Timer nextPrayer={nextPrayerTime} />;
 }
