@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
-import useTimer from "./utils";
 import { Prayer } from "./interfaces";
+import Timer from "./timer";
 
 function getNextPrayer(prayers: Prayer[], todayString: string, today: Date) {
     const sortedPrayers = prayers.slice().sort((a, b) => {
@@ -24,14 +24,12 @@ function getNextPrayer(prayers: Prayer[], todayString: string, today: Date) {
 }
 
 export default function TimeDown() {
-    let today = new Date();
-    let todayString = today.toISOString().substr(0, 10);
-    let nextDay = new Date();
-    nextDay.setDate(new Date().getDate() + 1);
-    let nextDayStr = nextDay.toISOString().substr(0,10);
+    let [today, setToday] = useState<Date>(new Date());
+    let [todayString, setTodayString] = useState<string>(today.toISOString().substr(0, 10));
+    let [nextDay, setNextDay] = useState<Date>(new Date());
+    let [nextDayStr, setNextDayStr] = useState<string>(nextDay.toISOString().substr(0, 10));
     let [nextPrayerTime, setNextPrayerTime] = useState<Date>(new Date(`${todayString}T${'23:59:59'}`));
-    let timerPeriod = {hours: 0, minutes: 0, seconds: 0};
-    let todayPrayersOver = false;
+    let [todayPrayersOver, setTodayPrayersOver] = useState(false);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -42,7 +40,8 @@ export default function TimeDown() {
             // if isha has passed current time, request next days data
             const isha = jsonData.data?.find((p: Prayer) => p.name === 'Isha');
             if(isha && (new Date(`${todayString}T${isha.iqama}`).valueOf() < today.valueOf())) {
-                todayPrayersOver = true;
+                // todayPrayersOver = true;
+                setTodayPrayersOver(true);
                 const newResponse = await fetch('/api?day='+nextDay.toISOString().substr(0, 10));
                 jsonData = await newResponse.json();
             }
@@ -56,16 +55,15 @@ export default function TimeDown() {
             }
         };
 
+        setToday(new Date());
+        setTodayString(today.toISOString().substr(0, 10));
+        // set next day to nextDay + 1
+        nextDay.setDate(new Date().getDate() + 1);
+        setNextDay(nextDay);
+        setNextDayStr(nextDay.toISOString().substr(0, 10));
+
         fetchData();
     }, []);
 
-    // const { hours, minutes, seconds } = useTimer(nextPrayerTime);
-    timerPeriod = useTimer(nextPrayerTime);
-
-    return <>
-    {timerPeriod.hours != 0 && timerPeriod.minutes != 0 && timerPeriod.seconds != 0 ? 
-    <span className="text-white text-4xl">{`${timerPeriod.hours}`+':'+`${timerPeriod.minutes}`+':'+`${timerPeriod.seconds}`}</span>
-    : 
-    <span className="text-white text-4xl">...</span>}
-    </>
+    return <Timer nextPrayer={nextPrayerTime} />;
 }
